@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.jpeg"/>
+    <meta name="description" content="Site internet Thomas Clarisse">
+    <meta name="keywords" content="HTML, CSS, JavaScript, thomas clarisse, PHP, REACT">
+    <meta name="author" content="Thomas Clarisse">
+    <link rel="shortcut icon" type="image/png" href="assets/images/thomasclarisse.png"/>
     <link rel="stylesheet" href="assets/css/styles.css">
-    <title>Thomas Website</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <title>Thomas Clarisse</title>
 </head>
-<body>
+<body >
     <header>
         <div class="burger-menu" id="burger-menu">
             <img onclick="burgerFunction()" src="/assets/images/navburger.png" alt="Menu burger">
@@ -23,15 +28,15 @@
         </nav>
     </header>
     <main>
-        <div class="card-first">
+        <div class="card-first" data-aos="fade-down">
             <img class="card-img" src="assets/images/thomasclarisse.png" alt="IMG PROFIL THOMAS CLARISSE">
             <div class="card-body-first">
                 <h1 class="card-title-first bold font blue">Bienvenue sur le site de Thomas Clarisse</h1>
                 <h4 class="card-text font bold">Développeur Web Full Stack Junior 💻</h4>
             </div>
         </div>
-        <h1 class="title">Biographie</h1>
-        <div class="card">
+        <h1 class="title" data-aos="fade-up">Biographie</h1>
+        <div class="card" data-aos="fade-up">
             <div class="card-body">
                 <p class="card-text-presentation font">J'ai commencé par des études en tant que Technicien informatique en alternance.
                 Actuellement en formation à la WildCodeSchool pour devenir Développeur web.
@@ -40,8 +45,8 @@
                 </p>
             </div>
         </div>
-        <h1 class="title">Compétences</h1>
-        <div class="competences">
+        <h1 class="title" data-aos="fade-up">Compétences</h1>
+        <div class="competences" data-aos="fade-up">
             <div class="card">
                 <div class="card-body">
                     <div class="card-soft-title bold font">Soft Skills</div>
@@ -99,89 +104,91 @@
                 </div>
             </div>
         </div>
-        
-        <h1 class="title">Mes projets</h1>
-        <div class="project">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-project">
-                        <div class="card-project-title bold font">WebInCloudy</div>
-                        <div class="card-project-text font">Site d'hébergement numérique</div>
-                        <div class="card-techno">
-                            <img class="code" src="/assets/images/code.png" alt="code img">
-                            <p class="techno font bold">REACT / SYMFONY</p>
-                            <a href="#" class="github font bold blue">WebInCloudy.fr</a>
+        <div data-aos="fade-down">
+            <h1 class="title">Mes projets</h1>
+            <div class="project">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-project">
+                            <div class="card-project-title bold font">WebInCloudy</div>
+                            <div class="card-project-text font">Site d'hébergement numérique</div>
+                            <div class="card-techno">
+                                <img class="code" src="/assets/images/code.png" alt="code img">
+                                <p class="techno font bold">REACT / SYMFONY</p>
+                                <a href="#" class="github font bold blue">WebInCloudy.fr</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-project">
-                        <div class="card-project-title bold font">Site Thomas Clarisse</div>
-                        <div class="card-project-text font">Site personnel de Thomas Clarisse</div>
-                        <div class="card-techno">
-                            <img class="code" src="/assets/images/code.png" alt="code img">
-                            <p class="techno font bold">HTML / CSS</p>
-                            <a href="#" class="github font bold blue">GitHub</a>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-project">
+                            <div class="card-project-title bold font">Site Thomas Clarisse</div>
+                            <div class="card-project-text font">Site personnel de Thomas Clarisse</div>
+                            <div class="card-techno">
+                                <img class="code" src="/assets/images/code.png" alt="code img">
+                                <p class="techno font bold">HTML / CSS</p>
+                                <a href="#" class="github font bold blue">GitHub</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-project">
-                        <div class="card-project-title bold font">TechWatch</div>
-                        <div class="card-project-text font">Apprenez à faire une bonne veille technologique</div>
-                        <div class="card-techno">
-                            <img class="code" src="/assets/images/code.png" alt="code img">
-                            <p class="techno font bold">HTML / CSS</p>
-                            <a href="#" class="github font bold blue">GitHub</a>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-project">
+                            <div class="card-project-title bold font">TechWatch</div>
+                            <div class="card-project-text font">Apprenez à faire une bonne veille technologique</div>
+                            <div class="card-techno">
+                                <img class="code" src="/assets/images/code.png" alt="code img">
+                                <p class="techno font bold">HTML / CSS</p>
+                                <a href="#" class="github font bold blue">GitHub</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-project">
-                        <div class="card-project-title bold font">MyBooks</div>
-                        <div class="card-project-text font">Bibliothèque numérique personnelle</div>
-                        <div class="card-techno">
-                            <img class="code" src="/assets/images/code.png" alt="code img">
-                            <p class="techno font bold">HTML / CSS / JS / PHP</p>
-                            <a href="#" class="github font bold blue">GitHub</a>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-project">
+                            <div class="card-project-title bold font">MyBooks</div>
+                            <div class="card-project-text font">Bibliothèque numérique personnelle</div>
+                            <div class="card-techno">
+                                <img class="code" src="/assets/images/code.png" alt="code img">
+                                <p class="techno font bold">HTML / CSS / JS / PHP</p>
+                                <a href="#" class="github font bold blue">GitHub</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <h1 class="title">Contactez-moi</h1>
-        <div class="card">
-            <div class="card-body">
-                <form action="" method="post">
-                    <div class="form-group">
-                        <div class="form-class">
-                            <label class="font bold">Nom :</label>
-                            <input type="text" name="name" id="" required>
+        <div data-aos="fade-down">
+            <h1 class="title" id="contact">Contactez-moi</h1>
+            <div class="card">
+                <div class="card-body">
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <div class="form-class">
+                                <label class="font bold">Nom :</label>
+                                <input type="text" name="name" id="" required>
+                            </div>
+                            <div class="form-class">
+                                <label class="font bold">Adresse Mail :</label>
+                                <input type="email" name="email" id="" required>
+                            </div>
+                            <div class="form-class">
+                                <label class="font bold">Téléphone :</label>
+                                <input type="tel" name="phone" id="" required>
+                            </div>
+                            <div class="form-class">
+                                <label class="font bold">Message :</label>
+                                <input type="textarea" name="phone" id="" required>
+                            </div>
                         </div>
-                        <div class="form-class">
-                            <label class="font bold">Adresse Mail :</label>
-                            <input type="email" name="email" id="" required>
+                        <div class="btn">
+                        <button type="submit" class="send font bold blue">Envoyer</button>
                         </div>
-                        <div class="form-class">
-                            <label class="font bold">Téléphone :</label>
-                            <input type="tel" name="phone" id="" required>
-                        </div>
-                        <div class="form-class">
-                            <label class="font bold">Message :</label>
-                            <input type="textarea" name="phone" id="" required>
-                        </div>
-                    </div>
-                    <div class="btn">
-                    <button type="submit" class="send font bold blue">Envoyer</button>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </main>
@@ -193,5 +200,9 @@
     </footer>
 
 </body>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
 <script src="assets/js/script.js"></script>
 </html>
