@@ -1,16 +1,41 @@
+<?php 
+if (isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['email']) && isset($_POST['message']) && isset($_POST['phone'])) {
+    if (!empty($_POST['firstname'] && $_POST['lastname'] && $_POST['email'] && $_POST['message'] && $_POST['phone'])) {
+        $post = $firstname && $lastname && $email && $message && $phone;
+        $firstname = trim($_POST['firstname']);
+        $lastname = trim($_POST['lastname']);
+        $email = trim($_POST['email']);
+        $message = trim($_POST['message']);
+        $phone = $_POST['phone'];
+        $formcontent="De: $firstname $lastname \n Message: $message \n Téléphone: $phone";
+        $recipient = "thomasclarisse03@gmail.com";
+        $subject = "Website Thomas Clarisse contact";
+        $mailheader = "From: $email \r\n";
+        mail($recipient, $subject, $formcontent, $mailheader) or die("Error!");
+        header('Location: success.php');
+        exit();
+    }
+
+    $error = [];
+    if (empty($post)){
+        $errors[] = "Merci de remplir les informations manquants dans le formulaire";
+    }
+    
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Site internet Thomas Clarisse">
+    <meta name="description" content="Bienvenue sur mon site !">
     <meta name="keywords" content="HTML, CSS, JavaScript, thomas clarisse, PHP, REACT">
     <meta name="author" content="Thomas Clarisse">
     <link rel="shortcut icon" type="image/png" href="assets/images/thomasclarisse.png"/>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    
     <title>Thomas Clarisse</title>
 </head>
 <body >
@@ -28,6 +53,7 @@
         </nav>
     </header>
     <main>
+        
         <div class="card-first" data-aos="fade-down">
             <img class="card-img" src="assets/images/thomasclarisse.png" alt="IMG PROFIL THOMAS CLARISSE">
             <div class="card-body-first">
@@ -110,12 +136,12 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="card-project">
-                            <div class="card-project-title bold font">WebInCloudy</div>
-                            <div class="card-project-text font">Site d'hébergement numérique</div>
+                            <div class="card-project-title bold font">Site Thomas Clarisse</div>
+                            <div class="card-project-text font">Site personnel de Thomas Clarisse</div>
                             <div class="card-techno">
                                 <img class="code" src="/assets/images/code.png" alt="code img">
-                                <p class="techno font bold">REACT / SYMFONY</p>
-                                <a href="#" class="github font bold blue">WebInCloudy.fr</a>
+                                <p class="techno font bold">HTML / CSS / PHP</p>
+                                <a href="https://github.com/Thomas905/ThomasWebsite" class="github font bold blue">GitHub</a>
                             </div>
                         </div>
                     </div>
@@ -123,12 +149,12 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="card-project">
-                            <div class="card-project-title bold font">Site Thomas Clarisse</div>
-                            <div class="card-project-text font">Site personnel de Thomas Clarisse</div>
+                            <div class="card-project-title bold font">WebInCloudy</div>
+                            <div class="card-project-text font">Site d'hébergement numérique</div>
                             <div class="card-techno">
                                 <img class="code" src="/assets/images/code.png" alt="code img">
-                                <p class="techno font bold">HTML / CSS</p>
-                                <a href="#" class="github font bold blue">GitHub</a>
+                                <p class="techno font bold">REACT / SYMFONY</p>
+                                <a href="https://webincloudy.fr" class="github font bold blue">WebInCloudy.fr</a>
                             </div>
                         </div>
                     </div>
@@ -141,7 +167,7 @@
                             <div class="card-techno">
                                 <img class="code" src="/assets/images/code.png" alt="code img">
                                 <p class="techno font bold">HTML / CSS</p>
-                                <a href="#" class="github font bold blue">GitHub</a>
+                                <a href="https://github.com/Thomas905/callisto-techwatch" class="github font bold blue">GitHub</a>
                             </div>
                         </div>
                     </div>
@@ -154,7 +180,7 @@
                             <div class="card-techno">
                                 <img class="code" src="/assets/images/code.png" alt="code img">
                                 <p class="techno font bold">HTML / CSS / JS / PHP</p>
-                                <a href="#" class="github font bold blue">GitHub</a>
+                                <a href="https://purple-php-mybooks.phprover.wilders.dev/" class="github font bold blue">Site (Prototype)</a>
                             </div>
                         </div>
                     </div>
@@ -165,23 +191,34 @@
             <h1 class="title" id="contact">Contactez-moi</h1>
             <div class="card">
                 <div class="card-body">
-                    <form action="" method="post">
+                    <form action="/#contact" method="post">
+                        <?php
+                        if(!empty($errors)){
+                            foreach ($errors as $error) {
+                                echo "<div class='error-red'>" . $error . "</div>";
+                            }
+                        }
+                        ?>
                         <div class="form-group">
                             <div class="form-class">
                                 <label class="font bold">Nom :</label>
-                                <input type="text" name="name" id="" required>
+                                <input type="text" name="firstname" id="">
+                            </div>
+                            <div class="form-class">
+                                <label class="font bold">Prénom :</label>
+                                <input type="text" name="lastname" id="">
                             </div>
                             <div class="form-class">
                                 <label class="font bold">Adresse Mail :</label>
-                                <input type="email" name="email" id="" required>
+                                <input type="email" name="email" id="">
                             </div>
                             <div class="form-class">
                                 <label class="font bold">Téléphone :</label>
-                                <input type="tel" name="phone" id="" required>
+                                <input type="tel" name="phone" id="">
                             </div>
                             <div class="form-class">
                                 <label class="font bold">Message :</label>
-                                <input type="textarea" name="phone" id="" required>
+                                <input type="textarea" name="message" id="">
                             </div>
                         </div>
                         <div class="btn">
@@ -198,7 +235,6 @@
             <a class="blue font bold" href="download.php?path=download/CVTHOMASCLARISSE.pdf" >Télécharger mon CV</a>
         </div>
     </footer>
-
 </body>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
