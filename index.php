@@ -1,26 +1,44 @@
 <?php 
-if (isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['email']) && isset($_POST['message']) && isset($_POST['phone'])) {
-    if (!empty($_POST['firstname'] && $_POST['lastname'] && $_POST['email'] && $_POST['message'] && $_POST['phone'])) {
-        $post = $firstname && $lastname && $email && $message && $phone;
-        $firstname = trim($_POST['firstname']);
-        $lastname = trim($_POST['lastname']);
-        $email = trim($_POST['email']);
-        $message = trim($_POST['message']);
-        $phone = $_POST['phone'];
-        $formcontent="De: $firstname $lastname \n Message: $message \n Téléphone: $phone";
-        $recipient = "thomasclarisse03@gmail.com";
-        $subject = "Website Thomas Clarisse contact";
-        $mailheader = "From: $email \r\n";
-        mail($recipient, $subject, $formcontent, $mailheader) or die("Error!");
-        header('Location: success.php');
-        exit();
-    }
 
-    $error = [];
-    if (empty($post)){
-        $errors[] = "Merci de remplir les informations manquants dans le formulaire";
-    }
-    
+    $errors = [];
+
+    if (isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['email']) && isset($_POST['message']) && isset($_POST['phone'])) {
+        
+        if (empty($_POST['firstname'] )) {
+            $errors[] = "Merci de mettre votre nom";
+        }
+
+        if (empty($_POST['lastname'] )) {
+            $errors[] = "Merci de mettre votre prénom";
+        }
+
+        if (empty($_POST['email'] )) {
+            $errors[] = "Merci de mettre votre adresse mail";
+        }
+
+        if (empty($_POST['message'] )) {
+            $errors[] = "Merci de mettre un message";
+        }
+
+        if (empty($_POST['phone'] )) {
+            $errors[] = "Merci de mettre un numéro de téléphone";
+        }
+
+        if (empty($errors)) {
+            $firstname = trim($_POST['firstname']);
+            $lastname = trim($_POST['lastname']);
+            $email = trim($_POST['email']);
+            $message = trim($_POST['message']);
+            $phone = $_POST['phone'];
+            $formcontent="De: $firstname $lastname \n Message: $message \n Téléphone: $phone";
+            $recipient = "thomasclarisse03@gmail.com";
+            $subject = "Website Thomas Clarisse contact";
+            $mailheader = "From: $email \r\n";
+            mail($recipient, $subject, $formcontent, $mailheader) or die("Error!");
+            header('Location: success.php');
+            exit();
+        }
+        
 }
 ?>
 
